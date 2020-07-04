@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAC Consolidation Parser 1.0</title>
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">  
+</head>
+<body>
+<div class="container">
+<div class="row">
+    <div class="eight columns">
+      <div class="docs-section" style="border-right:5px solid #000;height:100vh;">
+        <h6 class="docs-header">SAC Consolidation Parser v1.0</h6>
+        <p style="margin-right:15px;text-align:justify;"><b>Disclaimer:</b> This program does not solve problems regarding duplicate barcodes. On the other hand, the creation of this program aims to solve problems that were frequently occurring during the uploading process.
+        </p>
+        <form action="" method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="six columns">
+              <label for="province_name">Province Name</label>
+              <select class="u-full-width" name="province_name" id="province_name" required>  
+                <option value="Batanes">Batanes</option>
+                <option value="Cagayan">Cagayan</option>
+                <option value="Isabela">Isabela</option>
+                <option value="Nueva Vizcaya">Nueva Vizcaya</option>
+                <option value="Quirino">Quirino</option>
+              </select>    
+            </div>
+            <div class="six columns">
+              <label for="municipality_name">Municipality PSGC</label>
+              <input class="u-full-width" type="text" name="municipality_psgc" id="municipality_psgc" required/>
+            </div>
+          </div>          
+          <div class="row">
+            <div class="six columns">
+              <label for="file_sanitize">File to be Sanitized</label>
+              <input class="u-full-width" type="file" id="file" name="file" id="file" required>      
+            </div>
+          </div>
+          <input class="button-primary" type="submit" name="submit" value="Perform Sanitize">
+          <button class="button" type="button" id="xlsxtocsv" name="xlsxtocsv" style="border:1px solid red!important;"><a style="color:red;text-decoration:none;" href="converter/index.php" target="_blank">Run Xlsx to CSV Converter</a></button>                    
+        </form>
+      </div>  
+    </div>
+    <div class="four columns">
+      <div class="docs-section" style="border:1px solid #dedede;padding:6px 12px;margin-top:20px;border-radius:5px;">
+        <h6 class="docs-header">Program Flow For Sanitizing:</h6>
+        <p><b>1.</b> First, fill-out the province and municipality PSG code and select the CSV file to be sanitized. Then run perform sanitize. Please check the downloaded csv file for any needed manual checking.</p>
+        <h6 class="docs-header">Program Flow For Xlsx to CSV Conversion:</h6>
+        <p><b>1.</b> First, erase previously stored files the converter > files > For_Conversion folder, then copy xlsx files for conversion in the aforesaid directory. Then, run the Convert xlsx to csv.<br/>
+          <b>2.</b> Second, check the converted files at converter > files > Processed_Excel folder. Take note, before execution of the conversion algorithm, files in the For_Conversion and Processed_Excel folders were automatically deleted.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
